@@ -1,0 +1,35 @@
+<mvc:View
+		controllerName="sap.ui.demo.basicTemplate.controller.Home"
+		displayBlock="true"
+		xmlns="sap.m"
+		xmlns:l="sap.ui.layout"
+		xmlns:mvc="sap.ui.core.mvc">
+	<Page id="page" showHeader="false">
+		<content>
+			
+			<FlexBox 
+					width="100%" 
+					height="100%"
+					alignItems="Center" 
+					justifyContent="Center">
+				
+				<Image src="/img/cinema.png" width="16rem" class="sapUiMediumMargin"/>
+
+
+				<l:VerticalLayout>
+					<VBox alignItems="Center" justifyContent="Center">
+						<Title text="{i18n>title}" class="home-title"/>
+						<Text text="{i18n>subtitle}" class="home-subtitle"/>
+					</VBox>
+
+					<SearchField 
+							placeholder="{i18n>searchPlaceholder}"
+							class="home-searchfield sapUiMediumMarginTop"
+							width="100%"/>
+				</l:VerticalLayout>
+
+			</FlexBox>
+
+		</content>
+	</Page>
+</mvc:View>
