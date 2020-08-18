@@ -55,6 +55,12 @@
 				"settings": {
 					"bundleName": "sap.ui.demo.basicTemplate.i18n.i18n"
 				}
+			},
+			"mAppData" : {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"mMovies" : {
+				"type": "sap.ui.model.json.JSONModel"
 			}
 		},
 		"resources": {
@@ -76,6 +82,11 @@
 					"pattern": "",
 					"name": "home",
 					"target": ["home"]
+				},
+				{
+					"pattern": "moviesList",
+					"name": "moviesList",
+					"target": ["movies"]
 				}
 			],
 			"targets": {
@@ -84,6 +95,12 @@
 					"viewId": "home",
 					"viewLevel": 1,
 					"title": "{i18n>title}"
+				},
+				"movies": {
+					"viewId": "moviesList",
+					"viewPath": "sap.ui.demo.basicTemplate.view",
+					"viewName": "MoviesList",
+					"viewLevel" : 2
 				}
 			}
 		}

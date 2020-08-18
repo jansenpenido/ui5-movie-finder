@@ -1,0 +1,55 @@
+<mvc:View
+		controllerName="sap.ui.demo.basicTemplate.controller.MoviesList"
+		displayBlock="true"
+		xmlns="sap.m"
+		xmlns:grid="sap.ui.layout.cssgrid"
+		xmlns:f="sap.f"
+		xmlns:l="sap.ui.layout"
+		xmlns:mvc="sap.ui.core.mvc">
+	<Page
+			showHeader="true" 
+			title="{i18n>title}" 
+			showNavButton="true"
+			navButtonPress="onPressNavBack">
+
+		<headerContent>
+			<OverflowToolbar>
+				<content>
+					<Label text="Dark Theme"/>
+					<Switch state="{mAppData>/darkTheme}" change="onChangeDarkTheme"/>
+				</content>
+			</OverflowToolbar>
+		</headerContent>
+
+		<content>
+			<Panel headerText="{i18n>searchResultTitle} '{mAppData>/searchQuery}':" class="sapUiResponsiveMargin" width="auto">
+
+				<f:GridList items="{mMovies>/Search}">
+					<f:customLayout>
+						<grid:GridBasicLayout
+								gridTemplateColumns="repeat(auto-fit, minmax(14rem, 1fr))"
+								gridGap="1.5rem"/>
+					</f:customLayout>
+					<f:GridListItem>
+						<VBox 
+								class="sapUiSmallMargin"
+								alignItems="Center"
+								alignContent="Center"
+								justifyContent="Center">
+							<Image src="{mMovies>Poster}" width="7rem"/>
+							<Title 
+									text="{mMovies>Title}" 
+									wrapping="true" />
+							<Label 
+									text="{mMovies>Year}" 
+									wrapping="true" 
+									class="sapUiTinyMarginBottom"/>
+						</VBox>
+					</f:GridListItem>
+				</f:GridList>
+
+			</Panel>
+        </content>
+
+    </Page>
+</mvc:View>

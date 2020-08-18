@@ -2,33 +2,53 @@
 		controllerName="sap.ui.demo.basicTemplate.controller.Home"
 		displayBlock="true"
 		xmlns="sap.m"
+		xmlns:core="sap.ui.core"
 		xmlns:l="sap.ui.layout"
 		xmlns:mvc="sap.ui.core.mvc">
-	<Page id="page" showHeader="false">
+	<Page 
+			id="page" 
+			showHeader="true"
+			title="{i18n>title}">
+		<headerContent>
+			<OverflowToolbar>
+				<content>
+					<Label text="Dark Theme"/>
+					<Switch state="{mAppData>/darkTheme}" change="onChangeDarkTheme"/>
+				</content>
+			</OverflowToolbar>
+		</headerContent>
+
 		<content>
 			
-			<FlexBox 
+			<VBox
 					width="100%" 
 					height="100%"
 					alignItems="Center" 
 					justifyContent="Center">
-				
-				<Image src="/img/cinema.png" width="16rem" class="sapUiMediumMargin"/>
+
+				<HBox alignItems="Center" justifyContent="Center">
+
+					<Image src="/img/cinema.png" width="20rem" class="sapUiMediumMargin"/>
 
 
-				<l:VerticalLayout>
-					<VBox alignItems="Center" justifyContent="Center">
-						<Title text="{i18n>title}" class="home-title"/>
-						<Text text="{i18n>subtitle}" class="home-subtitle"/>
-					</VBox>
+					<l:VerticalLayout>
+						<VBox alignItems="Center" justifyContent="Center">
+							<Title text="{i18n>title}" class="home-title"/>
+							<Text text="{i18n>subtitle}" class="home-subtitle"/>
+						</VBox>
 
-					<SearchField 
-							placeholder="{i18n>searchPlaceholder}"
-							class="home-searchfield sapUiMediumMarginTop"
-							width="100%"/>
-				</l:VerticalLayout>
+						<SearchField 
+								id="searchFieldHome"
+								search="onSearchHome"
+								value="{mAppData>/searchQuery}"
+								placeholder="{i18n>searchPlaceholder}"
+								class="home-searchfield sapUiMediumMarginTop"
+								width="100%"/>
+					</l:VerticalLayout>
 
-			</FlexBox>
+				</HBox>
+
+			</VBox>
 
 		</content>
 	</Page>
