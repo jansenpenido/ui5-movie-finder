@@ -20,5 +20,10 @@
     "karma-coverage": "^2.0.2",
     "karma-ui5": "^2.2.0",
     "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "http-proxy": "^1.18.1",
+    "node-fetch": "^2.6.0"
   }
 }
