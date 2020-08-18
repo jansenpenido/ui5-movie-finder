@@ -4,7 +4,8 @@
   "description": "Best-practice starting point for building a freestyle app",
   "private": true,
   "scripts": {
-    "start": "ui5 serve",
+    "start": "node webapp/app.js",
+    "start-ui5": "ui5 serve",
     "lint": "eslint webapp",
     "karma": "karma start",
     "karma-ci": "karma start karma-ci.conf.js",
@@ -23,7 +24,6 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
-    "http-proxy": "^1.18.1",
     "node-fetch": "^2.6.0"
   }
 }
